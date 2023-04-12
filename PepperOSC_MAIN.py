@@ -18,7 +18,7 @@ stop_threads = False
 # Repeat
 def run_thread_pepper_control():
     print ("Thread 1 ON - Pepper behavior control")
-    max_choice = int(len(PepperOSC_Config.behavior_names) - 1)
+    max_choice = int(len(PepperOSC_Config.animation_names) - 1)
     ask_choice = True
     while True:
         if ask_choice:
@@ -34,7 +34,7 @@ def run_thread_pepper_control():
                     print("Not in range")
 
                 else:
-                    print("You choose " + PepperOSC_Config.behavior_names[behav_choice])
+                    print("You choose " + PepperOSC_Config.animation_names[behav_choice])
                     # sound start flag
                     PepperOSC_OSC.osc_send_sound_flag('/soundstart', 1)
                     # do the movement
@@ -51,7 +51,7 @@ def run_thread_pepper_control():
 
 
 # Thread 2
-# Constantly send osc
+# Constantly streams OSC
 def run_thread_send_osc():
     print ("Thread 2 ON - sending data to OSC")
     while True:
@@ -85,7 +85,7 @@ if __name__ == "__main__":
     time.sleep(1)
 
     while not (keyboard.is_pressed('ESCAPE')):
-        # loooop foreveerrrrr
+        # loop forever
         # until someone hit the ESC button
         stop_threads = False
 

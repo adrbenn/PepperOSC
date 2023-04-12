@@ -33,7 +33,6 @@ def pepper_resume_awareness():
 def pepper_say(utterance):
     global tts_proxy
     tts_proxy.setParameter("speed", 80)
-    tts_proxy.setVolume(PepperOSC_Config.pepperVolume)
     tts_proxy.say(utterance)
 
 
@@ -47,20 +46,20 @@ def pepper_stand():
 # Main function: running Pepper behavior
 def pepper_run_behavior(behavior_index):
     # pepper_stand()
-    behavior_name = PepperOSC_Config.behavior_names[behavior_index]
+    behavior_name = PepperOSC_Config.animation_names[behavior_index]
     global behavior_proxy
 
     # check that the behavior exists
     if behavior_proxy.isBehaviorInstalled(behavior_name):
         # check that it is not already running
         if not behavior_proxy.isBehaviorRunning(behavior_name):
-            print("Start running behavior" + behavior_name)
+            print("Start running animation" + behavior_name)
             behavior_proxy.runBehavior(behavior_name)
             time.sleep(0.4)
         else:
-            print("Behavior is already running")
+            print("Animation is already running")
     else:
-        print("Behavior not found")
+        print("Animation not found")
 
 
 # Main function: streaming joint data
@@ -121,11 +120,9 @@ if __name__ == '__main__':
     pepper_pause_awareness()
     time.sleep(1)
     pepper_say("Hello! I am connected and ready.")
+    time.sleep(1)
+    pepper_say("But this is not the correct Python file to run. Please run Pepper O S C Main.")
     pepper_stand()
-
-    pepper_available_behavior()
-    # pepper_test_behavior("animations/Stand/Gestures/Wings_2")
-
     pepper_resume_awareness()
     end_time = time.time()
     print("Runtime : " + str(end_time - start_time))
