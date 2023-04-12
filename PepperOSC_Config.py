@@ -1,13 +1,12 @@
 # CONFIG
 
 # the robot
-# pepperIP = "130.237.2.7"
-pepperIP = "192.168.100.223"
+pepperIP = "192.168.100.1"
 pepperPort = 9559
 
 
 # target machine where the sound synthesis software is
-soundIP = "192.168.100.126"
+soundIP = "192.168.100.2"
 soundPort = 3005
 
 # Pepper's Data
