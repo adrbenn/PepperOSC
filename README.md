@@ -6,8 +6,7 @@ Bridging Pepper robot to sound synthesizing software (Pd, MaxMSP, SC) through OS
 
 - Python 2.7
 
-- Pepper (NAOqi) SDK 2.5.10 - Python 2.7 SDK
-Available here (under the "Old: Pepper SDK" header): 
+- Pepper (NAOqi) SDK 2.5.10 - Python 2.7 SDK. Available here (under the "Old: Pepper SDK" header): 
 https://www.aldebaran.com/en/support/pepper-naoqi-2-9/downloads-softwares
 
 ### Contents:
